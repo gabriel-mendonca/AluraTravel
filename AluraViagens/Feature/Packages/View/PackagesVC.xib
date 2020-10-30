@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PackagesVC" customModule="AluraViagens" customModuleProvider="target">
+            <connections>
+                <outlet property="labelUpdate" destination="4VV-uW-Ahc" id="D82-AG-eEB"/>
+                <outlet property="packagesCollection" destination="9R8-Cv-wIW" id="DCW-zz-Veo"/>
+                <outlet property="searchForTrips" destination="cEU-bq-zux" id="k4i-eF-hNa"/>
+                <outlet property="view" destination="iN0-l3-epB" id="dbh-bc-0oK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NEm-RQ-ei9">
+                    <rect key="frame" x="16" y="15" width="288" height="553"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pacotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXh-6S-H35">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.5" id="kGb-uH-tMV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                            <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="0.853688445008285" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-bq-zux">
+                            <rect key="frame" x="0.0" y="26" width="288" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="XiO-SP-g3c"/>
+                            </constraints>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 pacotes encontrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VV-uW-Ahc">
+                            <rect key="frame" x="0.0" y="70.5" width="288" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.5" id="eJH-1H-dIJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.85368844499999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9R8-Cv-wIW">
+                            <rect key="frame" x="0.0" y="96" width="288" height="457"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZVP-Ew-Xop">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94117647058823528" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="NEm-RQ-ei9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="DzY-Jq-Cmw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="NEm-RQ-ei9" secondAttribute="bottom" id="QRg-ZO-feJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NEm-RQ-ei9" secondAttribute="trailing" constant="16" id="dLA-tP-1oS"/>
+                <constraint firstItem="NEm-RQ-ei9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="uFZ-U4-n3d"/>
+            </constraints>
+            <point key="canvasLocation" x="138.75" y="123.59154929577466"/>
+        </view>
+    </objects>
+</document>
