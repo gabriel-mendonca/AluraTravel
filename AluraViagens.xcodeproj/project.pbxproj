@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		C0B6CF0A25487E9D00C7C42F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF0825487E9D00C7C42F /* HomeTableViewCell.swift */; };
 		C0B6CF0B25487E9D00C7C42F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B6CF0925487E9D00C7C42F /* HomeTableViewCell.xib */; };
-		C0B6CF1025487FC400C7C42F /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF0F25487FC400C7C42F /* Trip.swift */; };
-		C0B6CF152548819A00C7C42F /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF142548819A00C7C42F /* TripDAO.swift */; };
+		C0B6CF1025487FC400C7C42F /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF0F25487FC400C7C42F /* TripModel.swift */; };
 		C0B6CF272548906300C7C42F /* PackagesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B6CF262548906300C7C42F /* PackagesVC.xib */; };
 		C0B6CF2C2548906F00C7C42F /* PackagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF2B2548906F00C7C42F /* PackagesVC.swift */; };
 		C0B6CF312548908A00C7C42F /* PackagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF302548908A00C7C42F /* PackagesViewModel.swift */; };
@@ -24,7 +23,7 @@
 		C0B6CF6A2549411400C7C42F /* PackagesDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B6CF692549411400C7C42F /* PackagesDetailsVC.xib */; };
 		C0B6CF6F2549412600C7C42F /* PackagesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF6E2549412600C7C42F /* PackagesDetailsVC.swift */; };
 		C0B6CF742549471B00C7C42F /* PackagesDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF732549471B00C7C42F /* PackagesDetailsCoordinator.swift */; };
-		C0B6CF792549DD8800C7C42F /* PackageTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF782549DD8800C7C42F /* PackageTrip.swift */; };
+		C0B6CF792549DD8800C7C42F /* PackagesTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF782549DD8800C7C42F /* PackagesTrip.swift */; };
 		C0B6CF7E254A2DB500C7C42F /* PackagesTripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF7D254A2DB500C7C42F /* PackagesTripDAO.swift */; };
 		C0B6CF84254B732300C7C42F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6CF83254B732300C7C42F /* NavigationController.swift */; };
 		C0C70221254796FD00AE7726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C70220254796FD00AE7726 /* AppDelegate.swift */; };
@@ -61,8 +60,7 @@
 /* Begin PBXFileReference section */
 		C0B6CF0825487E9D00C7C42F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		C0B6CF0925487E9D00C7C42F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		C0B6CF0F25487FC400C7C42F /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		C0B6CF142548819A00C7C42F /* TripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
+		C0B6CF0F25487FC400C7C42F /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		C0B6CF262548906300C7C42F /* PackagesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesVC.xib; sourceTree = "<group>"; };
 		C0B6CF2B2548906F00C7C42F /* PackagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesVC.swift; sourceTree = "<group>"; };
 		C0B6CF302548908A00C7C42F /* PackagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModel.swift; sourceTree = "<group>"; };
@@ -76,7 +74,7 @@
 		C0B6CF692549411400C7C42F /* PackagesDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagesDetailsVC.xib; sourceTree = "<group>"; };
 		C0B6CF6E2549412600C7C42F /* PackagesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesDetailsVC.swift; sourceTree = "<group>"; };
 		C0B6CF732549471B00C7C42F /* PackagesDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesDetailsCoordinator.swift; sourceTree = "<group>"; };
-		C0B6CF782549DD8800C7C42F /* PackageTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageTrip.swift; sourceTree = "<group>"; };
+		C0B6CF782549DD8800C7C42F /* PackagesTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTrip.swift; sourceTree = "<group>"; };
 		C0B6CF7D254A2DB500C7C42F /* PackagesTripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesTripDAO.swift; sourceTree = "<group>"; };
 		C0B6CF83254B732300C7C42F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		C0C7021D254796FD00AE7726 /* AluraViagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AluraViagens.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +163,7 @@
 		C0B6CF242548904900C7C42F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0B6CF782549DD8800C7C42F /* PackagesTrip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,10 +390,8 @@
 		C0C7025F254797B500AE7726 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C0B6CF0F25487FC400C7C42F /* Trip.swift */,
+				C0B6CF0F25487FC400C7C42F /* TripModel.swift */,
 				C0B6CF7D254A2DB500C7C42F /* PackagesTripDAO.swift */,
-				C0B6CF142548819A00C7C42F /* TripDAO.swift */,
-				C0B6CF782549DD8800C7C42F /* PackageTrip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,9 +560,8 @@
 				C0C7027625479D7B00AE7726 /* HomeCoordinator.swift in Sources */,
 				C0B6CF382548919500C7C42F /* PackagesCollectionViewCell.swift in Sources */,
 				C0B6CF84254B732300C7C42F /* NavigationController.swift in Sources */,
-				C0B6CF152548819A00C7C42F /* TripDAO.swift in Sources */,
-				C0B6CF792549DD8800C7C42F /* PackageTrip.swift in Sources */,
-				C0B6CF1025487FC400C7C42F /* Trip.swift in Sources */,
+				C0B6CF792549DD8800C7C42F /* PackagesTrip.swift in Sources */,
+				C0B6CF1025487FC400C7C42F /* TripModel.swift in Sources */,
 				C0C70263254797E100AE7726 /* BaseCoordinator.swift in Sources */,
 				C0C7027B25479E4500AE7726 /* HomeViewModel.swift in Sources */,
 				C0B6CF502548A0F100C7C42F /* TabBarViewModel.swift in Sources */,

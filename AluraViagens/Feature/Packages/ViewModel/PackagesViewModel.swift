@@ -13,6 +13,7 @@ protocol PackagesViewModelDelegate: AnyObject {
 
 class PackagesViewModel: BaseViewModel {
     
+    var listPackages: [PackagesTrip] = []
     var childCoordinator: PackagesCoordinator
     weak var delegate: PackagesViewModelDelegate?
     

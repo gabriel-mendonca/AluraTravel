@@ -9,20 +9,24 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    var viewModel: HomeViewModel?
-    let travelList: [Trip] = TripDAO().rerturnTrip()
+    var viewModel: HomeViewModel!
     
     @IBOutlet weak var homeTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setup()
         overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {
         hideNavigationBar()
         super.viewWillAppear(animated)
+    }
+    
+    func setup() {
+        viewModel?.lista = TripModel.buildList()
     }
 }
 
@@ -34,23 +38,15 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         homeTable.register(UINib (nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return travelList.count
+        return viewModel.lista.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentTrip = travelList[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         
-        cell.title.text = currentTrip.titleObjeto
-        cell.quantityDays.text = "R$ \(currentTrip.quantityDays) Dias"
-        cell.price.text = currentTrip.price
-        cell.pathImage.image = UIImage(named: currentTrip.pathImage)
-        cell.pathImage.clipsToBounds = true
-        cell.pathImage.layer.cornerRadius = 10
-        
-        
+        cell.setup(for: viewModel.lista[indexPath.row])
+        cell.cornerRadius()
         
         return cell
     }

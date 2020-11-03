@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewModel: BaseViewModel {
     
+    var lista: [TripModel] = []
     var childCoordinator: HomeCoordinator
     
     init(coordinator: HomeCoordinator) {

@@ -14,6 +14,19 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var pathImage: UIImageView!
     
+    
+    func setup(for model: TripModel) {
+        self.title.text = model.titleObjeto
+        self.quantityDays.text = "\(model.quantityDays) dias"
+        self.price.text = "R$ \(model.price)"
+        self.pathImage.image = UIImage(named: model.pathImage)
+    }
+    
+    func cornerRadius() {
+        self.pathImage.clipsToBounds = true
+        self.pathImage.layer.cornerRadius = 10
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

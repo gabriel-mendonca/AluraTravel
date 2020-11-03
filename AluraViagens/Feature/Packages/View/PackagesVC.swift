@@ -13,16 +13,14 @@ class PackagesVC: UIViewController,UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var searchForTrips: UISearchBar!
     @IBOutlet weak var labelUpdate: UILabel!
     
-    var viewModel: PackagesViewModel?
-    var completeList: [PackagesTrip] = PackagesTripDAO().returnAllTrips()
-    var travelList: [PackagesTrip] = []
+    var viewModel: PackagesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        travelList = completeList
         setupCollectionView()
         searchForTrips.delegate = self
+        setup()
         self.labelUpdate.text = updateCounter()
     }
     
@@ -31,8 +29,12 @@ class PackagesVC: UIViewController,UICollectionViewDataSource, UICollectionViewD
         super.viewWillAppear(animated)
     }
     
+    func setup() {
+        viewModel?.listPackages = PackagesTrip.buildListPackages()
+    }
+    
     func updateCounter() -> String {
-        return travelList.count == 1 ? "1 pacote encontrado" : "\(travelList.count) pacotes encontrados"
+        return viewModel.listPackages.count == 1 ? "1 pacote encontrado" : "\(viewModel.listPackages.count) pacotes encontrados"
     }
     
     func setupCollectionView() {
@@ -42,23 +44,14 @@ class PackagesVC: UIViewController,UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.travelList.count
+        return self.viewModel.listPackages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let currentList = travelList[indexPath.item]
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PackagesCollectionViewCell
         
-        cell.imagePackages.image = UIImage(named: currentList.trip.pathImage)
-        cell.labelTitle.text = currentList.trip.titleObjeto
-        cell.labelDays.text = "\(currentList.trip.quantityDays) dias"
-        cell.labelValue.text = "R$ \(currentList.trip.price)"
-        
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.00/255.0, alpha: 1).cgColor
-        
+        cell.setup(for: viewModel.listPackages[indexPath.row])
         cell.cornerRadius()
         
         return cell
@@ -66,10 +59,12 @@ class PackagesVC: UIViewController,UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let packages = travelList[indexPath.row]
+        let packages = viewModel.listPackages[indexPath.row]
         let xib = PackagesDetailsVC()
         xib.packatesComplete = packages
-        navigationController?.pushViewController(xib, animated: true)
+        self.navigationController?.pushViewController(xib, animated: true)
+//        viewModel.sendPackagesDetails()
+        
         
         
     }
@@ -81,11 +76,12 @@ class PackagesVC: UIViewController,UICollectionViewDataSource, UICollectionViewD
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     
-        travelList = completeList
+        setup()
         if searchText.isEmpty {
+            self.labelUpdate.text = updateCounter()
             packagesCollection.reloadData()
         } else {
-            travelList = completeList.filter({$0.trip.titleObjeto.lowercased().range(of: searchText.lowercased()) != nil})
+            viewModel.listPackages = viewModel.listPackages.filter({$0.trip.titleObjeto.lowercased().range(of: searchText.lowercased()) != nil})
             self.labelUpdate.text = updateCounter()
             packagesCollection.reloadData()
             
